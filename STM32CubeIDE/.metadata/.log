@@ -1,0 +1,54 @@
+!SESSION 2024-02-26 14:04:00.398 -----------------------------------------------
+eclipse.buildId=Version 1.14.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sv_SE
+Framework arguments:  C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-02-26 14:04:06.927
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-02-26 14:04:06.938
+!MESSAGE Log4j2 initialized with config file C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-02-26 14:04:10.012
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-02-26 14:05:02.810 -----------------------------------------------
+eclipse.buildId=Version 1.14.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sv_SE
+Framework arguments:  C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-02-26 14:05:07.071
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-02-26 14:05:07.071
+!MESSAGE Log4j2 initialized with config file C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-02-26 14:05:10.279
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-02-26 14:07:32.935
+!MESSAGE Indexed 'STM32F7508-DK' (54 sources, 181 headers) in 10.4 sec: 16,322 declarations; 90,156 references; 21 unresolved inclusions; 5 syntax errors; 432 unresolved names (0.4%)
+!SESSION 2024-02-26 14:12:11.674 -----------------------------------------------
+eclipse.buildId=Version 1.14.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sv_SE
+Framework arguments:  C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-02-26 14:12:16.329
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-02-26 14:12:16.333
+!MESSAGE Log4j2 initialized with config file C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-02-26 14:12:20.775
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-02-26 14:12:27.912
+!MESSAGE Indexed 'STM32F7508-DK' (54 sources, 216 headers) in 6,94 sec: 21 655 declarations; 109 534 references; 23 unresolved inclusions; 286 syntax errors; 1 386 unresolved names (1 %)
