@@ -1,0 +1,1 @@
+2 channel ADC reading on an stm32f750 discovery board. On channel 1 i.e. channel ADC channel 0(inside CubeMX) a voltage between 42 V and 25 V is read, and on channel 2 i.e. ADC channel 8(inside CubeMX). 
