@@ -49,7 +49,7 @@ Screen1ViewBase::Screen1ViewBase()
     textArea2current_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QFAQ));
     add(textArea2current_1);
 
-    textProgress1.setXY(265, 111);
+    textProgress1.setXY(24, 215);
     textProgress1.setProgressIndicatorPosition(12, 10, 150, 30);
     textProgress1.setRange(0, 100);
     textProgress1.setColor(touchgfx::Color::getColorFromRGB(12, 27, 55));
@@ -57,6 +57,16 @@ Screen1ViewBase::Screen1ViewBase()
     textProgress1.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TEXTPROGRESS_BACKGROUNDS_ROUNDED_DARK_ID));
     textProgress1.setValue(60);
     add(textProgress1);
+
+    analogClock1.setXY(240, 16);
+    analogClock1.setBackground(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_ANALOGCLOCK_BACKGROUNDS_SMALL_PLAIN_DARK_ID, 120, 120);
+    analogClock1.setupSecondHand(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_ANALOGCLOCK_HANDS_SMALL_SECOND_PLAIN_DARK_ID, 2, 100);
+    analogClock1.setupMinuteHand(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_ANALOGCLOCK_HANDS_SMALL_MINUTE_PLAIN_DARK_ID, 10, 87);
+    analogClock1.setMinuteHandSecondCorrection(false);
+    analogClock1.setupHourHand(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_ANALOGCLOCK_HANDS_SMALL_HOUR_PLAIN_DARK_ID, 9, 69);
+    analogClock1.setHourHandMinuteCorrection(false);
+    analogClock1.initializeTime24Hour(10, 10, 0);
+    add(analogClock1);
 }
 
 Screen1ViewBase::~Screen1ViewBase()

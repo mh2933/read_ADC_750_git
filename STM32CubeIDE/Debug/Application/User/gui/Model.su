@@ -1,3 +1,4 @@
-C:/TouchGFXProjects/read_ADC_750/TouchGFX/gui/src/model/Model.cpp:19:11:float map(float, float, float, float, float)	0	static
-C:/TouchGFXProjects/read_ADC_750/TouchGFX/gui/src/model/Model.cpp:26:1:Model::Model()	12	static
-C:/TouchGFXProjects/read_ADC_750/TouchGFX/gui/src/model/Model.cpp:32:6:void Model::tick()	72	static
+C:/TouchGFXProjects/read_ADC_750/TouchGFX/gui/src/model/Model.cpp:25:11:float map(float, float, float, float, float)	0	static
+C:/TouchGFXProjects/read_ADC_750/TouchGFX/gui/src/model/Model.cpp:32:1:Model::Model()	8	static
+C:/TouchGFXProjects/read_ADC_750/TouchGFX/gui/src/model/Model.cpp:37:9:uint8_t Model::getCurrentTimeInSeconds()	0	static
+C:/TouchGFXProjects/read_ADC_750/TouchGFX/gui/src/model/Model.cpp:46:6:void Model::tick()	80	static

@@ -1,6 +1,6 @@
-C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:654:6:StartDefaultTask	8	static
-C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:96:1:__io_putchar	16	static
-C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:228:6:SystemClock_Config	88	static
-C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:113:5:main	112	static,ignoring_inline_asm
-C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:752:6:HAL_TIM_PeriodElapsedCallback	0	static
-C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:769:6:Error_Handler	0	static
+C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:749:6:StartDefaultTask	8	static
+C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:105:1:__io_putchar	16	static
+C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:238:6:SystemClock_Config	88	static
+C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:122:5:main	104	static,ignoring_inline_asm
+C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:847:6:HAL_TIM_PeriodElapsedCallback	0	static
+C:/TouchGFXProjects/read_ADC_750/Core/Src/main.c:864:6:Error_Handler	0	static

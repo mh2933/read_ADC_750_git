@@ -12,6 +12,7 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/progress_indicators/TextProgress.hpp>
+#include <touchgfx/containers/clock/AnalogClock.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -35,6 +36,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard textArea2current;
     touchgfx::TextAreaWithOneWildcard textArea2current_1;
     touchgfx::TextProgress textProgress1;
+    touchgfx::AnalogClock analogClock1;
 
     /*
      * Wildcard Buffers
