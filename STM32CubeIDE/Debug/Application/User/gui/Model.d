@@ -2,7 +2,6 @@ Application/User/gui/Model.o: \
  C:/TouchGFXProjects/read_ADC_750/TouchGFX/gui/src/model/Model.cpp \
  ../../TouchGFX/gui/include/gui/model/Model.hpp \
  ../../TouchGFX/gui/include/gui/model/ModelListener.hpp \
- ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \
@@ -38,13 +37,15 @@ Application/User/gui/Model.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_ltdc_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rtc.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rtc_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h \
- ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
+ ../../Core/Inc/main.h
 ../../TouchGFX/gui/include/gui/model/Model.hpp:
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:
-../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:
@@ -80,7 +81,10 @@ Application/User/gui/Model.o: \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_ltdc_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rtc.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rtc_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:
+../../Core/Inc/main.h:

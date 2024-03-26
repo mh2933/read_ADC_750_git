@@ -180,6 +180,16 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c</locationURI>
 		</link>
 		<link>
+			<name>Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_rtc.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_rtc_ex.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rtc_ex.c</locationURI>
+		</link>
+		<link>
 			<name>Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal_sdram.c</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sdram.c</locationURI>
@@ -443,6 +453,26 @@
 			<name>Application/User/generated/image_alternate_theme_images_backgrounds_480x272_wavy_lines.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_backgrounds_480x272_wavy_lines.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_analogclock_backgrounds_small_plain_dark.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_analogclock_backgrounds_small_plain_dark.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_analogclock_hands_small_hour_plain_dark.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_analogclock_hands_small_hour_plain_dark.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_analogclock_hands_small_minute_plain_dark.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_analogclock_hands_small_minute_plain_dark.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_analogclock_hands_small_second_plain_dark.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_analogclock_hands_small_second_plain_dark.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_icon_round_medium_outline_active.cpp</name>

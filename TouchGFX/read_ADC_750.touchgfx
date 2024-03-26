@@ -88,8 +88,8 @@
           {
             "Type": "TextProgress",
             "Name": "textProgress1",
-            "X": 265,
-            "Y": 111,
+            "X": 24,
+            "Y": 215,
             "Width": 175,
             "Height": 50,
             "TextId": "__SingleUse_6KNV",
@@ -105,6 +105,42 @@
             "IndicatorPositionHeight": 30,
             "ProgressRangeMax": 100,
             "ProgressInitialValue": 60
+          },
+          {
+            "Type": "AnalogClock",
+            "Name": "analogClock1",
+            "X": 240,
+            "Y": 16,
+            "Width": 240,
+            "Height": 240,
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_analogclock_backgrounds_small_plain_dark.png",
+            "RotationCenterX": 120,
+            "RotationCenterY": 120,
+            "Preset": "alternate_theme\\presets\\analogclock\\small_plain_dark.json",
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "ClockHands": [
+              {
+                "Type": "HourClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_hour_plain_dark.png",
+                "RotationCenterX": 9,
+                "RotationCenterY": 69
+              },
+              {
+                "Type": "MinuteClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_minute_plain_dark.png",
+                "RotationCenterX": 10,
+                "RotationCenterY": 87
+              },
+              {
+                "Type": "SecondClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_second_plain_dark.png",
+                "RotationCenterX": 2,
+                "RotationCenterY": 100
+              }
+            ],
+            "InitialHour": 10,
+            "InitialMinute": 10
           }
         ],
         "Interactions": []

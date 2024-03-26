@@ -50,6 +50,8 @@ DMA2D_HandleTypeDef hdma2d;
 
 LTDC_HandleTypeDef hltdc;
 
+RTC_HandleTypeDef hrtc;
+
 UART_HandleTypeDef huart1;
 
 SDRAM_HandleTypeDef hsdram1;
@@ -69,11 +71,17 @@ const osThreadAttr_t TouchGFXTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
+
 #ifdef __GNUC__
   #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
 #else
   #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 #endif /*  __GNUC__ */
+
+RTC_TimeTypeDef RTC_Time;
+RTC_DateTypeDef RTC_Date;
+RTC_TimeTypeDef sTime;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -86,6 +94,7 @@ static void MX_USART1_UART_Init(void);
 static void MX_ADC3_Init(void);
 static void MX_CRC_Init(void);
 static void MX_DMA2D_Init(void);
+static void MX_RTC_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 
@@ -151,6 +160,7 @@ int main(void)
   MX_ADC3_Init();
   MX_CRC_Init();
   MX_DMA2D_Init();
+  MX_RTC_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
@@ -230,6 +240,11 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
+  /** Configure LSE Drive Capability
+  */
+  HAL_PWR_EnableBkUpAccess();
+  __HAL_RCC_LSEDRIVE_CONFIG(RCC_LSEDRIVE_LOW);
+
   /** Configure the main internal regulator output voltage
   */
   __HAL_RCC_PWR_CLK_ENABLE();
@@ -238,8 +253,9 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 25;
@@ -471,6 +487,85 @@ static void MX_LTDC_Init(void)
 }
 
 /**
+  * @brief RTC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_RTC_Init(void)
+{
+
+  /* USER CODE BEGIN RTC_Init 0 */
+
+  /* USER CODE END RTC_Init 0 */
+
+  RTC_TimeTypeDef sTime = {0};
+  RTC_DateTypeDef sDate = {0};
+
+  /* USER CODE BEGIN RTC_Init 1 */
+
+  /* USER CODE END RTC_Init 1 */
+
+  /** Initialize RTC Only
+  */
+  hrtc.Instance = RTC;
+  hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
+  hrtc.Init.AsynchPrediv = 127;
+  hrtc.Init.SynchPrediv = 255;
+  hrtc.Init.OutPut = RTC_OUTPUT_DISABLE;
+  hrtc.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
+  hrtc.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
+  if (HAL_RTC_Init(&hrtc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /* USER CODE BEGIN Check_RTC_BKUP */
+
+  /* USER CODE END Check_RTC_BKUP */
+
+  /** Initialize RTC and set the Time and Date
+  */
+//  sTime.Hours = 0x0;
+//  sTime.Minutes = 0x0;
+//  sTime.Seconds = 0x0;
+//  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+//  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+//  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
+//  sDate.WeekDay = RTC_WEEKDAY_MONDAY;
+//  sDate.Month = RTC_MONTH_JANUARY;
+//  sDate.Date = 0x1;
+//  sDate.Year = 0x0;
+//
+//  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
+  /* USER CODE BEGIN RTC_Init 2 */
+  RTC_Time.Hours = 0x10;
+  RTC_Time.Minutes = 0x20;
+  RTC_Time.Seconds = 0x30;
+  RTC_Time.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+  RTC_Time.StoreOperation = RTC_STOREOPERATION_RESET;
+  if (HAL_RTC_SetTime(&hrtc, &RTC_Time, RTC_FORMAT_BCD) != HAL_OK)
+  {
+	  Error_Handler();
+  }
+  RTC_Date.WeekDay = RTC_WEEKDAY_TUESDAY;
+  RTC_Date.Month = RTC_MONTH_MARCH;
+  RTC_Date.Date = 0x9;
+  RTC_Date.Year = 0x18;
+  if (HAL_RTC_SetDate(&hrtc, &RTC_Date, RTC_FORMAT_BCD) != HAL_OK)
+  {
+	  Error_Handler;
+  }
+  /* USER CODE END RTC_Init 2 */
+
+}
+
+/**
   * @brief USART1 Initialization Function
   * @param None
   * @retval None
@@ -576,9 +671,9 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOK_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOI_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(VSYNC_FREQ_GPIO_Port, VSYNC_FREQ_Pin, GPIO_PIN_RESET);

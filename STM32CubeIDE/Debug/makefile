@@ -99,7 +99,7 @@ main-build: STM32F7508-DK.elf secondary-outputs
 
 # Tool invocations
 STM32F7508-DK.elf STM32F7508-DK.map: $(OBJS) $(USER_OBJS) C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\STM32F750N8HX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "STM32F7508-DK.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\STM32F750N8HX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F7508-DK.map" -Wl,--gc-sections -static -L../../Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+	arm-none-eabi-g++ -o "STM32F7508-DK.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\TouchGFXProjects\read_ADC_750\STM32CubeIDE\STM32F750N8HX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F7508-DK.map" -Wl,--gc-sections -static -L../../Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

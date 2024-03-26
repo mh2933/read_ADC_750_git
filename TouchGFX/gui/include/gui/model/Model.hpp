@@ -17,6 +17,8 @@ public:
 
     //virtual void tickCounterUpdated(int value){};
     void tick();
+    uint8_t getCurrentTimeInSeconds();
+
 protected:
     ModelListener* modelListener;
 
@@ -28,12 +30,13 @@ protected:
     float seconds;
     volatile int tickCounterNow;
     long count_milli_seconds;
+    uint8_t previous_second;
 
 
     //volatile long int counting_milliseconds;
 
 
-    std::chrono::high_resolution_clock::time_point startTime;
+    //std::chrono::high_resolution_clock::time_point startTime;
 
 };
 
