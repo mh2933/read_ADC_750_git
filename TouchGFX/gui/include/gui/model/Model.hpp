@@ -17,7 +17,7 @@ public:
 
     //virtual void tickCounterUpdated(int value){};
     void tick();
-    uint8_t getCurrentTimeInSeconds();
+    float adcReadVoltage();
 
 protected:
     ModelListener* modelListener;

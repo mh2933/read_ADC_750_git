@@ -34,12 +34,31 @@ Model::Model() : modelListener(0), Voltage (10.5), Current (6.5), mAh (10000), t
 
 }
 
-uint8_t Model::getCurrentTimeInSeconds()
+float Model::adcReadVoltage()
 {
+	ADC_ChannelConfTypeDef sConfig = {0};
+	float adc_sum_1 = 0.0;
+	float adc_count = 0.0;
 
+    for (uint16_t i = 0; i < 1000; i++)
+    {
+        // Configure for channel 0
+        sConfig.Channel = ADC_CHANNEL_0;
+        sConfig.Rank = ADC_REGULAR_RANK_1;
+        sConfig.SamplingTime = ADC_SAMPLETIME_112CYCLES;
+        if (HAL_ADC_ConfigChannel(&hadc3, &sConfig) != HAL_OK)
+        {
+            Error_Handler();
+        }
 
+        HAL_ADC_Start(&hadc3);
+        HAL_ADC_PollForConversion(&hadc3, 10);
+        float value_1 = HAL_ADC_GetValue(&hadc3);
+        HAL_ADC_Stop(&hadc3);
+        adc_sum_1 += value_1;
+        adc_count++;
 
-	return sTime.Seconds;
+    }
 }
 
 
@@ -75,7 +94,7 @@ void Model::tick()
         }
 
         HAL_ADC_Start(&hadc3);
-        HAL_ADC_PollForConversion(&hadc3, 100);
+        HAL_ADC_PollForConversion(&hadc3, 10);
         float value_1 = HAL_ADC_GetValue(&hadc3);
         HAL_ADC_Stop(&hadc3);
         adc_sum_1 += value_1;
@@ -96,7 +115,7 @@ void Model::tick()
         }
 
         HAL_ADC_Start(&hadc3);
-        HAL_ADC_PollForConversion(&hadc3, 100);
+        HAL_ADC_PollForConversion(&hadc3, 10);
         float value_2 = HAL_ADC_GetValue(&hadc3);
         HAL_ADC_Stop(&hadc3);
         adc_sum_2 += value_2;
@@ -104,8 +123,8 @@ void Model::tick()
     }
 
 
-	HAL_Delay(20);
-	milli_seconds++; // Increment seconds
+	//HAL_Delay(20);
+	//milli_seconds++; // Increment seconds
 	//count_milli_seconds += milli_seconds;
 
     //printf("before if statement milli_seconds: %ld\n ", milli_seconds);
@@ -131,12 +150,12 @@ void Model::tick()
             //printf("voltage_divider: %.2f\n", voltage_divider);
 
             // CURRENT CALCULATION
-            float v_per_ampere = 0.025;
-            float Vcc = 3.311;
+            float v_per_ampere = 0.0239;
+            float Vcc = 3.320;
             float adc2_average = adc_sum_2 / adc_count;
             //printf("adc_count: %f\n", adc_count);
             //printf("adc2_average: %f\n\n", adc2_average);
-            float midpoint_val = 1.6610;
+            float midpoint_val = 1.5425;
 
             float calculated_volt = adc2_average * (Vcc / 4095.0);
             //printf("calculated_volt: %.5f\n\n", calculated_volt);
@@ -144,13 +163,13 @@ void Model::tick()
             //printf("calculated_voltage_to_current: %.5f\n\n", calculated_voltage_to_current);
 
             Voltage = map(adc1_average, 0, 4095, 0.0, 55.59);
-            Current = map(calculated_voltage_to_current, -100.0, 100.0, -100.0, 99.35);
+            Current = map(calculated_voltage_to_current, -100.0, 100.0, -100.0, 100.0);
             //printf("printing Voltage after mapfunction2: %.2f\n", Voltage);
 
 
             // Calculate mAh consumed per second
             float mAhConsumedPerSecond = (Current * seconds) / 3.6;
-            //printf("mAhConsumedPerSecond: %f\n", mAhConsumedPerSecond);
+            //printf("mAhConsumedPerSecond: %.2f\n", mAhConsumedPerSecond);
 
             // Subtract the mAh consumed in the last second from the total mAh
             mAh += mAhConsumedPerSecond; // divide by 10 to make the LCD and printf function to match
